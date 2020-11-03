@@ -6,7 +6,7 @@ One of the most common reasons is the ease of use.
 
 Many essential developer tools are terminal applications or command Line applications because of the same reason.
 
-As the complexity and functionality of the terminal applications grow, the more need for a simpler and easier way to create CLI applications.
+As the complexity and functionality of the terminal applications grow, the greater the need for a simpler and easier way to create CLI applications.
 
 In a [previous article](https://www.section.io/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js.
 
@@ -22,9 +22,9 @@ The most significant advantage of using React over Node.js is that React takes a
 
 React also allows you to work with components and render these components to the terminal like you would in a browser.
 
-Ink allows you even to use flexbox, meaning no more using coloured string outputs like you would in Node.
-
 To make a CLI using React, we use a library called [INK](https://github.com/vadimdemedes/ink) to make our work easier.
+
+Ink allows you even to use flexbox, meaning no more using coloured string outputs like you would in Node.
 
 Some popular applications made with React and INK include.
 
@@ -42,7 +42,7 @@ Ink does not require any additional learning compared to Node. If you are famili
 
 Let's get started by building a simple Hello World application.
 
-To do this, we need to React and Ink from npm. To make our work easier, Ink ships with a command to bootstrap a React CLI application.
+To do this, we need React and Ink packages from npm. To make our work easier, Ink ships with a command to bootstrap a React CLI application.
 
 In your terminal type
 
@@ -331,7 +331,7 @@ You can find a gif of the application in action [here](https://terminalizer.com/
 
 ## Finishing Up
 
-We just built our first complex CLI using React and here are Some things to note:
+We just built our first complex CLI using React and here are some things to note:
 
 Ink comes with more elements that allow you to have more control over the user interface of the CLI.
 
