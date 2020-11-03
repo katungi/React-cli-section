@@ -12,9 +12,9 @@ In a [previous article](https://www.section.io/engineering-education/create-a-no
 
 One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make.
 
-Let's create a CLI with React.js instead of Node.js and see the difference.
-
 React makes it very easy to create powerful and very interactive CLI applications.
+
+Let's create a CLI with React.js instead of Node.js and see the difference.
 
 ## Why React and not Node
 
@@ -55,11 +55,11 @@ npx create-ink-app
 Warning: the last command might take some time.  
 When it finishes, it will have created a link executable for the application.
 
-When you run `section-example` in the terminal, it should return this:
+When you run `section-example` (name of your application) in the terminal, it should return this:
 
 ![Image](images/first-1.png "Title")
 
-And there you have it, your first CLI using React. To achieve this in Node.js would have taken a lot of code and time and not forgetting libraries.
+And there you have it, your first CLI using React. To achieve this in Node.js would have taken a lot of code and time and not forgetting more libraries.
 
 ## Simple Project
 
@@ -94,7 +94,7 @@ Let's create a simple CLI application that takes a country as input.
  It then returns some information about the given country in a table.
 
 To achieve this we need this npm package called [world-countries-capitals
-](https://www.npmjs.com/package/world-countries-capitals) which will give us country information.
+](https://www.npmjs.com/package/world-countries-capitals), which will give us country information.
 
 Let's start by getting user input. To achieve this, we need text input. Lucky for us, ink provides a package for this, just run:
 
@@ -103,6 +103,8 @@ Let's start by getting user input. To achieve this, we need text input. Lucky fo
 In our `ui.js` let's import and use the text input in the terminal.
 
 We will also make use of the `useState` React hook to store our country value and handle changes to the country name.
+
+In simple terms, think of ```useState hooks```  as a way to work with variables in React.
 
 To learn more about React hooks, I recommend reading the React [documentation](https://reactjs.org/docs/hooks-overview.html).
 
@@ -153,7 +155,7 @@ at the top of our file, we import the package
 const wcc = require("world-countries-capitals");
 ```
 
-We will create some variables to hold the data we get from the useEffect hook. They will come in handy when updating the table in real-time.
+We will create some variables to hold the data we get from the useEffect hook, using the useState. They will come in handy when updating the table in real-time.
 
 ```javascript
 const [capital, setCapital] = React.useState("");
@@ -174,7 +176,7 @@ React.useEffect(() => {
  });
 ```
 
-Our code at this time, will look like this:
+Our code at this time, will look like this, inclusive of the useEffect hook:
 
 ```javascript
 "use strict";
@@ -213,7 +215,7 @@ Finally, let's render the information in a table.
 
 We will need to nest a lot of boxes with some attributes. The most common attributes will be ```flex-direction``` and ```borderStyle```.
 
-Since we are using React, we are still in the JSX realm, and we need a parent attribute. W
+Since we are using React, we are still in the JSX realm, and we need a parent attribute.
 
 Within the Box element, beneath the TextBox element, we will add our table.
 
@@ -249,7 +251,7 @@ Within the Box element, beneath the TextBox element, we will add our table.
  </Box>
 ```
 
-Let's add a banner to our application, just because we can. We will add it within the root Box element.
+Let's add a banner to our application, just because we can. We will add it within the root Box element. We will add it on top of the text input.
 
 ```javascript
  <Box borderStyle="round" borderColor="green">
