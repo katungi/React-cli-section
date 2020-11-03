@@ -3,42 +3,18 @@
 Command-line applications have become popular in the developer ecosystem for several reasons.
 
 
-One of the most common reasons is the ease of use.
+One of the most common reasons is the ease of use and many essential developer tools are terminal applications or command Line applications because of the same reason. As the complexity and functionality of the terminal applications grow, the more need for a simpler and easier way to create CLI applications.
 
 
-Many essential developer tools are terminal applications or command Line applications because of the same reason.
-
-
-As the complexity and functionality of the terminal applications grow, the more need for a simpler and easier way to create CLI applications.
-
-
-In a [previous article](https://www.section.io/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js.
-
-
-One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make.
-
-
-React makes it very easy to create powerful and very interactive CLI applications.
-
-
-Let's create a CLI with React.js instead of Node.js and see the difference.
+In a [previous article](https://www.section.io/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js. One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make. React makes it very easy to create powerful and very interactive CLI applications. Let's create a CLI with React.js instead of Node.js and see the difference.
 
 
 ## Why React and not Node
 
-React takes away all the pains of parsing arguments and does them in the background.
+React takes away all the pains of parsing arguments and does them in the background. React also allows you to render components to the terminal like you would in a browser.Ink allows you even to use flexbox, meaning no more using coloured string outputs like you would in Node.
 
 
-React also allows you to render components to the terminal like you would in a browser.
-
-
-Ink allows you even to use flexbox, meaning no more using coloured string outputs like you would in Node.
-
-
-To make a CLI using React, we use a library called [INK](https://github.com/vadimdemedes/ink) to make our work easier.
-
-
-Some popular applications made with React and INK include.
+To make a CLI using React, we use a library called [INK](https://github.com/vadimdemedes/ink) to make our work easier. Some popular applications made with React and INK include.
 
 - Jest
 - Gatsby
@@ -49,16 +25,10 @@ Some popular applications made with React and INK include.
 
 ## Getting Started with React INK
 
-Ink is a React.js framework that abstracts the tedious task of building CLI applications.
+Ink is a React.js framework that abstracts the tedious task of building CLI applications. Ink does not need any extra learning compared to Node. If you are familiar with React, then you are good to go.
 
 
-Ink does not need any extra learning compared to Node. If you are familiar with React, then you are good to go.
-
-
-Let's get started by building a simple Hello World application.
-
-
-To do this, we need to React and Ink from npm. To make our work easier, Ink ships with a command to bootstrap a React CLI application.
+Let's get started by building a simple Hello World application. To do this, we need to React and Ink from npm. To make our work easier, Ink ships with a command to bootstrap a React CLI application.
 
 
 In your terminal type
@@ -87,16 +57,10 @@ And there you have it, your first CLI using React. To achieve this in Node.js wo
 
 ## Simple Project
 
-Let's go ahead and work on a more complex project.
+Let's go ahead and work on a more complex project. The project will help you understand the elements and the project structure of React ink.
 
 
- The project will help you understand the elements and the project structure of React ink.
-
-
-We will work in the `ui.js` file. The entry file for the application is `cli.js.`
-
-
-the code should look something like this:
+We will work in the `ui.js` file. The entry file for the application is `cli.js.`. The code should look something like this:
 
 
 ```javascript
@@ -114,14 +78,7 @@ module.exports = App;
 ```
 
 
-We are importing React from the React package.
-
-
-On the second line, we are importing the Text element that ships with the ink package.
-
-
-We also have a function that takes in a name and renders it.
-Let's create a simple CLI application that takes a country as input.
+We are importing React from the React package. On the second line, we are importing the Text element that ships with the ink package. We also have a function that takes in a name and renders it. Let's create a simple CLI application that takes a country as input.
  It then returns some information about the given country in a table.
 
 
@@ -135,13 +92,7 @@ Let's start by getting user input. To achieve this, we need text input. Lucky fo
 `npm install ink-text-input`
 
 
-In our `ui.js` let's import and use the text input in the terminal.
-
-
-We will also make use of the `useState` React hook to store our country value and handle changes to the country name.
-
-
-In simple terms, think of ```useState hooks```  as a way to work with variables in React.
+In our `ui.js` let's import and use the text input in the terminal. We will also make use of the `useState` React hook to store our country value and handle changes to the country name. In simple terms, think of ```useState hooks```  as a way to work with variables in React.
 
 
 To learn more about React hooks, I recommend reading the React [documentation](https://reactjs.org/docs/hooks-overview.html).
@@ -176,19 +127,10 @@ module.exports = App;
 On running `section-example` in the terminal, you should be able to enter a country name.
 
 
-Moving forward, we will need to search for the country in real-time and display the results in a table.
+Moving forward, we will need to search for the country in real-time and display the results in a table. To do so, we will invoke the world countries npm package. We will use another React hook called `useEffect` to fetch our data and update the component as it renders. Let's go ahead and implement this.
 
 
-To do so, we will invoke the world countries npm package. We will use another React hook called `useEffect` to fetch our data and update the component as it renders.
-
-
-Let's go ahead and do so.
-
-
-We first install and import the package.
-
-
-In the terminal:
+We first install and import the package. In the terminal:
 
 
 ``` terminal
@@ -213,10 +155,7 @@ const [phone, setPhone] = React.useState("");
 ```
 
 
-Finally, let's update our variables with information from the npm package.
-
-
-Our complete ```useEffect``` hook, will look like this.
+Finally, let's update our variables with information from the npm package. Our complete ```useEffect``` hook, will look like this.
 
 
 ```javascript
@@ -265,16 +204,7 @@ const App = () => {
 module.exports = App;
 ```
 
-Finally, let's render the information in a table.
-
-
-We will need to nest a lot of boxes with some attributes. The most common attributes will be ```flex-direction``` and ```borderStyle```.
-
-
-Since we are using React, we are still in the JSX realm, and we need a parent attribute.
-
-
-Within the Box element, beneath the TextBox element, we will add our table.
+Finally, let's render the information in a table. We will need to nest a lot of boxes with some attributes. The most common attributes will be ```flex-direction``` and ```borderStyle```. Since we are using React, we are still in the JSX realm, and we need a parent attribute. Within the Box element, beneath the TextBox element, we will add our table.
 
 
 ``` javascript
@@ -412,7 +342,4 @@ It also ships with custom hooks to manipulate the data acquired from the termina
 An example is, ```useInput``` that listens to the user input.
 
 
-Creating CLI applications has never been easier using React ink. Go ahead and have fun building more complex and beautiful CLI applications.
-
-
-To get the code used in the article, check [here](https://github.com/katungi/React-cli-section)
+Creating CLI applications has never been easier using React ink. Go ahead and have fun building more complex and beautiful CLI applications. To get the code used in the article, check [here](https://github.com/katungi/React-cli-section)
