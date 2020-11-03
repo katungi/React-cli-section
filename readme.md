@@ -8,7 +8,7 @@ A number of important developer tools have been created as terminal applications
 
 As the complexity and functionality of the terminal applications grows, the more need for a simpler and easier way to create CLI applications.
 
-In a [previous article](https://www.section.io/engineering-education/create-a-nodejs-cli/)we covered how to make a CLI application using Node.js.
+In a [previous article](https://www.section.io/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js.
 
 One of the key take aways from building a CLI using Node.js is that they are hard and tedious to make especially if the aim is to simplify things for the user.
 
