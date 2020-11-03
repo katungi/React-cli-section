@@ -1,16 +1,16 @@
 # Buiding CLI applications using React.js
 
-Command-line applications have become increasingly popular in the developer ecosystem for several reasons.
+Command-line applications have become popular in the developer ecosystem for several reasons.
 
 One of the most common reasons is the ease of use.
 
 Many essential developer tools are terminal applications or command Line applications because of the same reason.
 
-As the complexity and functionality of the terminal applications grow, the greater the need for a simpler and easier way to create CLI applications.
+As the complexity and functionality of the terminal applications grow, the more need for a simpler and easier way to create CLI applications.
 
 In a [previous article](https://www.section.io/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js.
 
-One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make, especially if the aim is to simplify things for the user.
+One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make.
 
 Let's create a CLI with React.js instead of Node.js and see the difference.
 
@@ -18,13 +18,13 @@ React makes it very easy to create powerful and very interactive CLI application
 
 ## Why React and not Node
 
-The most significant advantage of using React over Node.js is that React takes away all the pains of parsing arguments and does them in the background.
+React takes away all the pains of parsing arguments and does them in the background.
 
-React also allows you to work with components and render these components to the terminal like you would in a browser.
-
-To make a CLI using React, we use a library called [INK](https://github.com/vadimdemedes/ink) to make our work easier.
+React also allows you to render components to the terminal like you would in a browser.
 
 Ink allows you even to use flexbox, meaning no more using coloured string outputs like you would in Node.
+
+To make a CLI using React, we use a library called [INK](https://github.com/vadimdemedes/ink) to make our work easier.
 
 Some popular applications made with React and INK include.
 
@@ -38,11 +38,11 @@ Some popular applications made with React and INK include.
 
 Ink is a React.js framework that abstracts the tedious task of building CLI applications.
 
-Ink does not require any additional learning compared to Node. If you are familiar with React, then you are good to go.
+Ink does not need any extra learning compared to Node. If you are familiar with React, then you are good to go.
 
 Let's get started by building a simple Hello World application.
 
-To do this, we need React and Ink packages from npm. To make our work easier, Ink ships with a command to bootstrap a React CLI application.
+To do this, we need to React and Ink from npm. To make our work easier, Ink ships with a command to bootstrap a React CLI application.
 
 In your terminal type
 
@@ -52,8 +52,8 @@ mkdir section-example && cd section-example
 
 npx create-ink-app
 ```
-
-Warning: the create ink command might take some time, but when it finishes, it will have done everything, including creating a link executable for the application.
+Warning: the last command might take some time.  
+When it finishes, it will have created a link executable for the application.
 
 When you run `section-example` in the terminal, it should return this:
 
@@ -63,9 +63,11 @@ And there you have it, your first CLI using React. To achieve this in Node.js wo
 
 ## Simple Project
 
-Let's go ahead and work on a more complex project so you can understand the elements and the project structure of React ink.
+Let's go ahead and work on a more complex project.
 
-We will work in the `ui.js` file. The entry file for the application, however, is `cli.js.`
+ The project will help you understand the elements and the project structure of React ink.
+
+We will work in the `ui.js` file. The entry file for the application is `cli.js.`
 
 the code should look something like this:
 
@@ -85,13 +87,13 @@ module.exports = App;
 
 We are importing React from the React package.
 
-On the second line, we are importing the Text element that is provided by the ink package.
+On the second line, we are importing the Text element that ships with the ink package.
 
 We also have a function that takes in a name and renders it.
+Let's create a simple CLI application that takes a country as input.
+ It then returns some information about the given country in a table.
 
-For our simple project, we will build a simple CLI application that takes a country and returns some information about the given country in a table.
-
-To achieve that we require this npm package called [world-countries-capitals
+To achieve this we need this npm package called [world-countries-capitals
 ](https://www.npmjs.com/package/world-countries-capitals) which will give us country information.
 
 Let's start by getting user input. To achieve this, we need text input. Lucky for us, ink provides a package for this, just run:
@@ -116,13 +118,13 @@ const App = () => {
  const [country, setCountry] = React.useState("");
 
  return (
-  <Box>
-   <TextInput
-    placeholder="Enter your country..."
-    value={country}
-    onChange={setCountry}
-   />
-  </Box>
+ <Box>
+ <TextInput
+ placeholder="Enter your country..."
+ value={country}
+ onChange={setCountry}
+ />
+ </Box>
  );
 };
 
@@ -165,10 +167,10 @@ Our complete ```useEffect``` hook, will look like this.
 
 ```javascript
 React.useEffect(() => {
-  const getCountry = wcc.getCountryDetailsByName(country);
-  setCapital(getCountry[0].capital);
-  setCurrency(getCountry[0].currency);
-  setPhone(getCountry[0].phone_code);
+ const getCountry = wcc.getCountryDetailsByName(country);
+ setCapital(getCountry[0].capital);
+ setCurrency(getCountry[0].currency);
+ setPhone(getCountry[0].phone_code);
  });
 ```
 
@@ -188,19 +190,19 @@ const App = () => {
  const [phone, setPhone] = React.useState("");
 
  React.useEffect(() => {
-  const getCountry = wcc.getCountryDetailsByName(country);
-  setCapital(getCountry[0].capital);
-  setCurrency(getCountry[0].currency);
-  setPhone(getCountry[0].phone_code);
+ const getCountry = wcc.getCountryDetailsByName(country);
+ setCapital(getCountry[0].capital);
+ setCurrency(getCountry[0].currency);
+ setPhone(getCountry[0].phone_code);
  });
  return (
-  <Box>
-   <TextInput
-    placeholder="Enter your country..."
-    value={country}
-    onChange={setCountry}
-   />
-  </Box>
+ <Box>
+ <TextInput
+ placeholder="Enter your country..."
+ value={country}
+ onChange={setCountry}
+ />
+ </Box>
  );
 };
 
@@ -209,7 +211,7 @@ module.exports = App;
 
 Finally, let's render the information in a table.
 
-We will need to nest a lot of boxes with some attributes. The most common attributes will be ```flex-direction``` and ```borderStyle```, which set the styling attributes for the box element.
+We will need to nest a lot of boxes with some attributes. The most common attributes will be ```flex-direction``` and ```borderStyle```.
 
 Since we are using React, we are still in the JSX realm, and we need a parent attribute. W
 
@@ -218,41 +220,41 @@ Within the Box element, beneath the TextBox element, we will add our table.
 ``` javascript
 
 <Box flexDirection="column" width={80} borderStyle="single">
-    <Box>
-     <Box width="40%">
-      <Text>Country Code</Text>
-     </Box>
+ <Box>
+ <Box width="40%">
+ <Text>Country Code</Text>
+ </Box>
 
-     <Box width="40%">
-      <Text>Capital City</Text>
-     </Box>
+ <Box width="40%">
+ <Text>Capital City</Text>
+ </Box>
 
-     <Box width="40%">
-      <Text>Currency</Text>
-     </Box>
-    </Box>
-    <Box>
-     <Box width="40%">
-      <Text>{phone}</Text>
-     </Box>
+ <Box width="40%">
+ <Text>Currency</Text>
+ </Box>
+ </Box>
+ <Box>
+ <Box width="40%">
+ <Text>{phone}</Text>
+ </Box>
 
-     <Box width="40%">
-      <Text>{capital}</Text>
-     </Box>
+ <Box width="40%">
+ <Text>{capital}</Text>
+ </Box>
 
-     <Box width="40%">
-      <Text>{currency}</Text>
-     </Box>
-    </Box>
-   </Box>
+ <Box width="40%">
+ <Text>{currency}</Text>
+ </Box>
+ </Box>
+ </Box>
 ```
 
 Let's add a banner to our application, just because we can. We will add it within the root Box element.
 
 ```javascript
-    <Box borderStyle="round" borderColor="green">
-    <Text>Welcome to Country CLI</Text>
-   </Box>
+ <Box borderStyle="round" borderColor="green">
+ <Text>Welcome to Country CLI</Text>
+ </Box>
 ```
 
 We are done. Our full code now looks like this:
@@ -271,51 +273,51 @@ const App = () => {
  const [phone, setPhone] = React.useState("");
 
  React.useEffect(() => {
-  const getCountry = wcc.getCountryDetailsByName(country);
-  setCapital(getCountry[0].capital);
-  setCurrency(getCountry[0].currency);
-  setPhone(getCountry[0].phone_code);
+ const getCountry = wcc.getCountryDetailsByName(country);
+ setCapital(getCountry[0].capital);
+ setCurrency(getCountry[0].currency);
+ setPhone(getCountry[0].phone_code);
  });
 
  return (
-  <Box flexDirection="column">
-   <Box borderStyle="round" borderColor="green">
-    <Text>Welcome to Country CLI</Text>
-   </Box>
-   <TextInput
-    placeholder="Enter your country..."
-    value={country}
-    onChange={setCountry}
-   />
-   <Box flexDirection="column" width={80} borderStyle="single">
-    <Box>
-     <Box width="40%">
-      <Text>Country Code</Text>
-     </Box>
+ <Box flexDirection="column">
+ <Box borderStyle="round" borderColor="green">
+ <Text>Welcome to Country CLI</Text>
+ </Box>
+ <TextInput
+ placeholder="Enter your country..."
+ value={country}
+ onChange={setCountry}
+ />
+ <Box flexDirection="column" width={80} borderStyle="single">
+ <Box>
+ <Box width="40%">
+ <Text>Country Code</Text>
+ </Box>
 
-     <Box width="40%">
-      <Text>Capital City</Text>
-     </Box>
+ <Box width="40%">
+ <Text>Capital City</Text>
+ </Box>
 
-     <Box width="40%">
-      <Text>Currency</Text>
-     </Box>
-    </Box>
-    <Box>
-     <Box width="40%">
-      <Text>{phone}</Text>
-     </Box>
+ <Box width="40%">
+ <Text>Currency</Text>
+ </Box>
+ </Box>
+ <Box>
+ <Box width="40%">
+ <Text>{phone}</Text>
+ </Box>
 
-     <Box width="40%">
-      <Text>{capital}</Text>
-     </Box>
+ <Box width="40%">
+ <Text>{capital}</Text>
+ </Box>
 
-     <Box width="40%">
-      <Text>{currency}</Text>
-     </Box>
-    </Box>
-   </Box>
-  </Box>
+ <Box width="40%">
+ <Text>{currency}</Text>
+ </Box>
+ </Box>
+ </Box>
+ </Box>
  );
 };
 
@@ -331,12 +333,12 @@ You can find a gif of the application in action [here](https://terminalizer.com/
 
 ## Finishing Up
 
-We just built our first complex CLI using React and here are some things to note:
+We just built our first complex CLI using React and here are Some things to note:
 
 Ink comes with more elements that allow you to have more control over the user interface of the CLI.
 
-It also ships with custom hooks to manipulate the data acquired from the terminal, for example, ```useInput``` that listens to the user input.
+It also ships with custom hooks to manipulate the data acquired from the terminal.
+An example is, ```useInput``` that listens to the user input.
 
 Creating CLI applications has never been easier using React ink. Go ahead and have fun building more complex and beautiful CLI applications.
-
-All the code from this tutorial is hosted [here](https://github.com/katungi/React-cli-section)
+To get the code used in the article, check [here](https://github.com/katungi/React-cli-section)
